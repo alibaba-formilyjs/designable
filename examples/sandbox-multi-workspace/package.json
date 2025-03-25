@@ -25,16 +25,16 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "@designable/core": "1.0.0-beta.45",
-    "@designable/react": "1.0.0-beta.45",
-    "@designable/react-sandbox": "1.0.0-beta.45",
-    "@designable/react-settings-form": "1.0.0-beta.45",
+    "@designable/core": "workspace:*",
+    "@designable/react": "workspace:*",
+    "@designable/react-sandbox": "workspace:*",
+    "@designable/react-settings-form": "workspace:*",
     "@designable/shared": "1.0.0-beta.45",
     "@formily/reactive": "^2.0.2",
     "@formily/reactive-react": "^2.0.2",
     "antd": "^4.15.2",
-    "react": "^16.8.x",
-    "react-dom": "^16.8.x",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-jss": "^10.4.0"
   },
   "gitHead": "820790a9ae32c2348bb36b3de7ca5f1051ed392c"

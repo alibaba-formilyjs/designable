@@ -1,6 +1,6 @@
-import 'antd/dist/antd.less'
+import 'antd4/dist/antd.less'
 import React, { useMemo } from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import {
   Designer,
   DesignerToolsWidget,
@@ -230,4 +230,6 @@ const App = () => {
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const rootElement = document.getElementById('root')
+const root = ReactDOM.createRoot(rootElement)
+root.render(<App />)

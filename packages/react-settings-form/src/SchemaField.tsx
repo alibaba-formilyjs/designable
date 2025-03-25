@@ -75,4 +75,4 @@ export const SchemaField = createSchemaField({
     FormLayout,
     FormTab,
   },
-})
+}) as any

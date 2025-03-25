@@ -1,0 +1,3 @@
+[submodule "packages/antd"]
+	path = packages/antd
+	url = git@github.com:alibaba-formilyjs/antd.git

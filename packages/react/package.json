@@ -29,11 +29,13 @@
   "peerDependencies": {
     "@formily/reactive": "^2.0.2",
     "@formily/reactive-react": "^2.0.2",
-    "antd": "^4.15.4",
-    "react": "16.x || 17.x"
+    "antd": "^5.23.1",
+    "antd4": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@designable/core": "1.0.0-beta.45",
+    "@designable/core": "workspace:*",
     "@designable/shared": "1.0.0-beta.45",
     "dateformat": "^4.5.1"
   },

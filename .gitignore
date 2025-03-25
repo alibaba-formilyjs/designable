@@ -25,3 +25,6 @@ package.zip
 .cjsescache
 doc-site
 .lerna-changelog
+
+!packages/antd4/dist
+!packages/antd4/lib

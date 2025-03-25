@@ -9,7 +9,7 @@ import { AllLocales } from '../../locales'
 import './styles.less'
 
 export const Form: DnFC<React.ComponentProps<typeof FormilyForm>> = observer(
-  (props) => {
+  ({ labelCol = 6, wrapperCol = 12, ...props }) => {
     const prefix = usePrefix('designable-form')
     const form = useMemo(
       () =>
@@ -21,6 +21,8 @@ export const Form: DnFC<React.ComponentProps<typeof FormilyForm>> = observer(
     return (
       <FormilyForm
         {...props}
+        labelCol={labelCol}
+        wrapperCol={wrapperCol}
         style={{ ...props.style }}
         className={prefix}
         form={form}
@@ -46,10 +48,6 @@ Form.Behavior = createBehavior({
           ...(AllSchemas.FormLayout.properties as any),
           style: AllSchemas.CSSStyle,
         },
-      },
-      defaultProps: {
-        labelCol: 6,
-        wrapperCol: 12,
       },
     }
   },

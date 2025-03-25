@@ -11,6 +11,7 @@ const IconContext = createContext<IconProviderProps>(null)
 const isNumSize = (val: any) => /^[\d.]+$/.test(val)
 export interface IconProviderProps {
   tooltip?: boolean
+  children?: React.ReactNode
 }
 
 export interface IShadowSVGProps {
@@ -51,6 +52,7 @@ export const IconWidget: React.FC<IIconWidgetProps> & {
     } else if (React.isValidElement(infer)) {
       if (infer.type === 'svg') {
         return React.cloneElement(infer, {
+          // @ts-ignore
           height,
           width,
           fill: 'currentColor',
@@ -121,6 +123,7 @@ export const IconWidget: React.FC<IIconWidgetProps> & {
         cursor: props.onClick ? 'pointer' : props.style?.cursor,
       }}
     >
+      {/* @ts-ignore */}
       {takeIcon(props.infer)}
     </span>
   )

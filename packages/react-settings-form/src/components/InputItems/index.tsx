@@ -13,6 +13,7 @@ export interface IInputItemsProps {
   style?: React.CSSProperties
   width?: string | number
   vertical?: boolean
+  children?: React.ReactNode
 }
 
 export interface IInputItemProps {
@@ -22,25 +23,22 @@ export interface IInputItemProps {
   width?: string | number
   vertical?: boolean
   title?: React.ReactNode
+  children?: React.ReactNode
 }
 
 const InputItemsContext = React.createContext<IInputItemsContext>(null)
 
 export const InputItems: React.FC<IInputItemsProps> & {
   Item: React.FC<IInputItemProps>
-} = (props) => {
+} = ({ width = '100%', ...props }) => {
   const prefix = usePrefix('input-items')
   return (
-    <InputItemsContext.Provider value={props}>
+    <InputItemsContext.Provider value={{ width, vertical: props.vertical }}>
       <div className={cls(prefix, props.className)} style={props.style}>
         {props.children}
       </div>
     </InputItemsContext.Provider>
   )
-}
-
-InputItems.defaultProps = {
-  width: '100%',
 }
 
 InputItems.Item = (props) => {

@@ -1,5 +1,5 @@
 @root-entry-name: 'default';
-@import (reference) '~antd/es/style/themes/index.less';
+@import (reference) '~antd4/lib/style/themes/index.less';
 
 .dn-data-source-setter {
   ::-webkit-scrollbar {
@@ -18,12 +18,12 @@
   }
   &-node-title {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
     &-icon {
-      transition: all 0.15s ease-in-out;
       opacity: 0;
+      transition: all 0.15s ease-in-out;
 
       &:hover {
         color: @primary-color;
@@ -72,9 +72,9 @@
       }
 
       &-content {
-        padding: 2%;
         height: 300px;
         max-height: 300px;
+        padding: 2%;
         overflow: scroll;
       }
     }

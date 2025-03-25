@@ -12,6 +12,7 @@ export interface ICompositePanelProps {
   defaultActiveKey?: number
   activeKey?: number | string
   onChange?: (activeKey: number | string) => void
+  children?: React.ReactNode
 }
 export interface ICompositePanelItemProps {
   shape?: 'tab' | 'button' | 'link'

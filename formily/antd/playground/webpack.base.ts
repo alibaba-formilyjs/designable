@@ -17,10 +17,16 @@ const getWorkspaceAlias = () => {
         const pkg = fs.readJSONSync(
           path.resolve(basePath, name, './package.json')
         )
-        results[pkg.name] = path.resolve(basePath, name, './src')
+        const srcPath = path.resolve(basePath, name, './src')
+        if (fs.existsSync(srcPath)) {
+          results[pkg.name] = srcPath
+        } else {
+          results[pkg.name] = path.resolve(basePath, name)
+        }
       })
     })
   }
+  results["@formily/antd"] = path.resolve(basePath, "packages/antd/packages/components/src")
   return results
 }
 
@@ -40,14 +46,8 @@ export default {
   },
   resolve: {
     modules: ['node_modules'],
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.mjs'],
     alias: getWorkspaceAlias(),
-  },
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-    moment: 'moment',
-    antd: 'antd',
   },
   module: {
     rules: [
@@ -74,7 +74,9 @@ export default {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => autoprefixer(),
+              postcssOptions: {
+                plugins: () => autoprefixer(),
+              },
             },
           },
           {
@@ -98,6 +100,11 @@ export default {
         options: {
           name: '[name].[ext]',
         },
+      },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto', // 处理 ES Module
       },
     ],
   },

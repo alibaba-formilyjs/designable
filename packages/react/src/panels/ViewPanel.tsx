@@ -15,7 +15,10 @@ export interface IViewPanelProps {
   dragTipsDirection?: 'left' | 'right'
 }
 
-export const ViewPanel: React.FC<IViewPanelProps> = observer((props) => {
+export const ViewPanel: React.FC<IViewPanelProps> = observer(({
+  scrollable = true,
+  ...props
+}) => {
   const [visible, setVisible] = useState(true)
   const workbench = useWorkbench()
   const tree = useTree()
@@ -46,7 +49,7 @@ export const ViewPanel: React.FC<IViewPanelProps> = observer((props) => {
   return (
     <div
       style={{
-        overflow: props.scrollable ? 'overlay' : 'hidden',
+        overflow: scrollable ? 'overlay' : 'hidden',
         height: '100%',
         cursor: 'auto',
         userSelect: 'text',
@@ -56,7 +59,3 @@ export const ViewPanel: React.FC<IViewPanelProps> = observer((props) => {
     </div>
   )
 })
-
-ViewPanel.defaultProps = {
-  scrollable: true,
-}

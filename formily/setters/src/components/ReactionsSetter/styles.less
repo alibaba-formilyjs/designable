@@ -1,4 +1,4 @@
-@import '~antd/lib/style/themes/default.less';
+@import '~antd4/lib/style/themes/default.less';
 
 .dn-reactions-setter {
   width: 100%;
@@ -25,9 +25,9 @@
 
     &-header {
       padding: 8px 10px !important;
+      font-weight: 500 !important;
       background-color: @component-background !important;
       border-bottom: 1px solid @border-color-split !important;
-      font-weight: 500 !important;
 
       .@{ant-prefix}-collapse-arrow {
         margin-right: 4px !important;
@@ -65,40 +65,40 @@
     height: 300px;
 
     &-coder-wrapper {
+      position: relative;
       display: flex;
+      flex-direction: column;
       flex-grow: 2;
       height: 100%;
       padding-left: 10px;
-      position: relative;
-      flex-direction: column;
     }
 
     &-coder-start {
-      font-size: 18px;
-      line-height: 30px;
+      flex-grow: 0;
+      height: 31px;
       margin-bottom: 4px;
       color: @text-color;
       font-weight: 300;
-      flex-grow: 0;
+      font-size: 18px;
+      line-height: 30px;
       opacity: 0.96;
-      height: 31px;
     }
 
     &-coder-end {
-      font-size: 18px;
+      flex-grow: 0;
       height: 31px;
-      color: @text-color;
       margin-top: 4px;
       margin-bottom: 4px;
-      line-height: 30px;
+      color: @text-color;
       font-weight: 300;
-      flex-grow: 0;
+      font-size: 18px;
+      line-height: 30px;
       opacity: 0.96;
     }
 
     &-coder {
-      min-width: 0;
       flex-grow: 2;
+      min-width: 0;
       padding-left: 10px;
     }
   }
