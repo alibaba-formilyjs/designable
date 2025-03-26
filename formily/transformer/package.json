@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@designable/core": "workspace:*",
-    "@designable/shared": "1.0.0-beta.45"
+    "@designable/shared": "workspace:*"
   },
   "gitHead": "bda070c137ba0003cc4451b2208e089d2e326b23"
 }

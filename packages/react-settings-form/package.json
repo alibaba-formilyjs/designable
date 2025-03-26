@@ -46,7 +46,7 @@
     "@babel/parser": "^7.14.7",
     "@designable/core": "workspace:*",
     "@designable/react": "workspace:*",
-    "@designable/shared": "1.0.0-beta.45",
+    "@designable/shared": "workspace:*",
     "@monaco-editor/react": "4.4.6",
     "monaco-editor": "^0.25.2",
     "prettier": "^2.3.2",
